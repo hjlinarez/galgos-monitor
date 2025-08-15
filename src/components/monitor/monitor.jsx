@@ -39,7 +39,7 @@ export default function Monitor(){
                                     </div>
 
                                     <div className="col">
-                                        <Link to="/keno"><img src={ Img_gallos} alt="Ir a Monitor" width="100%" className="img-thumbnail" /></Link>
+                                        <Link to="/gallos"><img src={ Img_gallos} alt="Ir a Monitor" width="100%" className="img-thumbnail" /></Link>
                                     </div>
 
                                     <div className="col">

@@ -12,9 +12,10 @@ function VideoPlayer( { videoActivo, setVideoActivo}) {
   // 🔹 Función para obtener los videos desde la API
   const obtenerVideos = async () => {
 
-    let UrlVideos = "https://filesmsb.sfo3.cdn.digitaloceanspaces.com/galgos/";
+    //let UrlVideos = "https://filesmsb.sfo3.cdn.digitaloceanspaces.com/gallos/";
+    let UrlVideos = "//filesmsb.sfo3.cdn.digitaloceanspaces.com/gallos/";
 
-    fetch("https://api.keskplay.com/api/galgos/carrera", {
+    fetch("https://api.keskplay.com/api/gallos/combate", {
         method: "GET", // or 'PUT'        
         headers: {
           "Accept":"application/json",
@@ -22,21 +23,16 @@ function VideoPlayer( { videoActivo, setVideoActivo}) {
   
         },
       })
-        .then((res) => res.json())        
+        .then((res) => res.json())
+        .catch((error) => { swal("Disculpe","Fallo en la conexion","error"); console.error(error); setLoading(false); })
         .then((response) => {
             //videos.push(UrlVideos+response.videoMP4);
+            console.log(response.video);
             setVideos([
-                        UrlVideos+response.videoMP4,
-                        UrlVideos+response.videoMP4_alterno,
-                        UrlVideos+response.videoMP4_alterno_2,
-                        UrlVideos+response.videoMP4_alterno_3,
-                        UrlVideos+response.videoMP4_alterno_4,
-                        UrlVideos+response.videoMP4_alterno_5
+                        UrlVideos+response.video
                     ]);            
             
-        } )
-        .catch((error) => { swal("Disculpe","Fallo en la conexion","error"); console.error(error); setLoading(false); })
-        ;
+        } );
   
           //
         

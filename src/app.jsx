@@ -8,6 +8,7 @@ import Notfound from './notfound'
 import Caja from './caja'
 import Monitor from './components/monitor/monitor.jsx'
 import Galgos from './components/galgos/monitorgalgos.jsx'
+import Gallos from './components/gallos/monitorgallos.jsx'
 import Keno from './components/keno/monitor.jsx'
 import Ruleta from './components/ruleta/ruleta.jsx'
 //import Login from './components/login.jsx'
@@ -109,6 +110,7 @@ function App() {
                 
                 <Route path="/login" element={ < Login urlApi={ urlApi }/> } />                
                 <Route path="/galgos" element={ <PrivateRoute>< Galgos urlApi={ urlApi }/></PrivateRoute> } />
+                <Route path="/gallos" element={ <PrivateRoute>< Gallos urlApi={ urlApi }/></PrivateRoute> } />
                 <Route path="/keno" element={ <PrivateRoute>< Keno urlApi={ urlApi }/></PrivateRoute> } />
                 <Route path="/ruleta" element={ <PrivateRoute>< Ruleta urlApi={ urlApi }/></PrivateRoute> } />
                 <Route path="/login" element={ < Login urlApi={ urlApi }/> } />                
