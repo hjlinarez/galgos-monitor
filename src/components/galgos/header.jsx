@@ -28,7 +28,7 @@ function Header( { carrera, urlApi } ) {
                                     
                                     if (response)
                                     {                            
-                                      
+                                       setIdmoneda(response.idmoneda);
                                         setJackpot({
                                                         mini:  response.mini, 
                                                         super: response.super, 

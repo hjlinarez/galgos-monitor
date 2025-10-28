@@ -67,7 +67,9 @@ function MonitorGallos({ urlApi }) {
   const [filevideo, setFilevideo] = useState();
   const [loading, setLoading]  = useState(false)
 
-  const [videoActivo, setVideoActivo] = useState(null);
+  const [videoActivo, setVideoActivo] = useState(0);
+
+  const [historial, setHistorial] = useState([{idpelea:0, resultado:'Azul', sector:'S1'},{idpelea:2, resultado:'Rojo', sector:'S2'}]);
 
 
 
@@ -152,7 +154,7 @@ function MonitorGallos({ urlApi }) {
     if (userid > 0)
     {
       //
-      evento(setCombate, setEjemplares, setPos1, setPos2, setPos3, setVideoActivo);
+      evento(setCombate, setPos1, setPos2, setPos3, videoActivo, setVideoActivo);
 
     }else{
 
@@ -241,7 +243,7 @@ function MonitorGallos({ urlApi }) {
                   <div className="col">
                     
                     <div className="card bg-transparent">
-                      <div className="card-header bg-danger bg-gradient text-white fs-1 text-center fw-bold p-0">Rojo</div>
+                      <div className="card-header bg-danger bg-gradient text-white fs-1 text-center fw-bold p-0">Rojo { videoActivo }</div>
                       <div className="card-body bg-danger bg-gradient fs-1 text-center text-warning fw-bold p-0">
                         {combate.rojo}
                       </div>
@@ -338,26 +340,16 @@ function MonitorGallos({ urlApi }) {
                       <div className="card-body p-0 fs-3">
                         <table className="table table-striped table-sm table-dark m-0">
                           <tbody>
-                            <tr>
-                              <th>#0001</th>
-                              <td>Azul - S2</td>
-                            </tr>
-                            <tr>
-                              <th>#0001</th>
-                              <td>Azul - S2</td>
-                            </tr>
-                            <tr>
-                              <th>#0001</th>
-                              <td>Azul - S2</td>
-                            </tr>
-                            <tr>
-                              <th>#0001</th>
-                              <td>Azul - S2</td>
-                            </tr>
-                            <tr>
-                              <th>#0001</th>
-                              <td>Azul - S2</td>
-                            </tr>
+                            {
+                              combate.ultimosCombates && combate.ultimosCombates.map((valor, index) => (
+                                <tr key={index}>
+                                  <th>#{ valor.idevento}</th>
+                                  <td>{valor.ganador === 1 ? 'Rojo' : valor.ganador === 0 ? 'Empate' : valor.ganador === 2 ? 'Azul' : valor.ganador} - Sector #{valor.sector}</td>
+
+                                  
+                                </tr>
+                            ))}
+                            
                           </tbody>
                         </table>
 

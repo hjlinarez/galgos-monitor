@@ -1,7 +1,7 @@
 
 
 
-export function evento(setCombate, setPos1, setPos2, setPos3, setVideoActivo ) 
+export function evento(setCombate, setPos1, setPos2, setPos3, videoActivo, setVideoActivo ) 
 {
 
 
@@ -14,7 +14,7 @@ export function evento(setCombate, setPos1, setPos2, setPos3, setVideoActivo )
 
                     document.querySelector("#div_evento").innerHTML = data.idevento;                                                            
                     document.querySelector("#text_contador").value = data.segundos;
-                    //document.querySelector("#text_contador").value = 5;
+                    document.querySelector("#text_contador").value = 10;
                     
                     setCombate(data);                    
                     
@@ -76,8 +76,12 @@ export function evento(setCombate, setPos1, setPos2, setPos3, setVideoActivo )
                         if (cont == 0)
                         {
                             
+                            
                             clearInterval(idInterval);                            
                             correr_video(data, setPos1, setPos2, setPos3, setVideoActivo);                            
+                            
+                            
+                            //console.log('Video activo:', videoActivo);
                             //let idevento = document.querySelector("#idevento").innerHTML;
                             
 
@@ -118,10 +122,13 @@ export function evento(setCombate, setPos1, setPos2, setPos3, setVideoActivo )
                             {
                                 
                             }
+
+                            
                         }
                         else
                         {
                             //$("#div_segundos").html("Jugando");
+                            //alert("error en el contador");
                         }
                         
 
@@ -159,16 +166,18 @@ export function correr_video(data, setPos1, setPos2, setPos3, setVideoActivo)
     
 
         let video_carrera = document.getElementById("video_carrera");
-        console.log(video_carrera);
-        setVideoActivo(0);
+
+        //console.log(video_carrera)
+        
+        setVideoActivo(1);
         video_carrera.addEventListener("ended", function() {
             setTimeout(function () {                 
-                    //setPos1(data.POS1);
-                    //setPos2(data.POS2);
-                    //setPos3(data.POS3);
-                    //document.getElementById("resultados").style.display = "flex";
+                    setPos1(data.POS1);
+                    setPos2(data.POS2);
+                    setPos3(data.POS3);
+                    document.getElementById("resultados").style.display = "flex";
                 }, 0);
-            setTimeout(function () { window.location.reload(); }, 10000);
+            setTimeout(function () { window.location.reload(); }, 5000);
             //alert("El video ha terminado.");
             
             

@@ -43,7 +43,7 @@ function Monitor({ urlApi }) {
             fetch('https://api.keskplay.com/api/keno/jackpot/'+userid+'/'+sorteo)
             .then(response => response.json())        
             .then((response) => {                
-                                    //console.log(response)       
+                                    
                                     if (response)
                                     {                            
                                         setJackpot({
@@ -99,7 +99,7 @@ function Monitor({ urlApi }) {
                 let userid = localStorage.getItem("userId");
                 
                 try { 
-                        const response = await fetch('https://api.keskplay.com/api/keno/jackpot/'+userid+'/'+sorteo); 
+                        const response = await fetch('https://api.keskplay.com/api/keno/jackpotNew/'+userid+'/'+sorteo); 
                         const result = await response.json(); 
                         
                             setJackpot({

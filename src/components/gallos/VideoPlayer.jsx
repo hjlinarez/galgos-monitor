@@ -4,7 +4,11 @@ function VideoPlayer( { videoActivo, setVideoActivo}) {
 
 
   const [videos, setVideos] = useState([]); // Lista de videos desde la API  
+  const [combate, setCombate] = useState(null); // Datos del combate actual
+  
   const videoRefs = useRef([]);
+
+  const [urlvideos, setUrlVideos] = useState("https://filesmsb.sfo3.cdn.digitaloceanspaces.com/gallos/");
 
   
   
@@ -13,7 +17,7 @@ function VideoPlayer( { videoActivo, setVideoActivo}) {
   const obtenerVideos = async () => {
 
     //let UrlVideos = "https://filesmsb.sfo3.cdn.digitaloceanspaces.com/gallos/";
-    let UrlVideos = "//filesmsb.sfo3.cdn.digitaloceanspaces.com/gallos/";
+    let UrlVideos = "https://filesmsb.sfo3.cdn.digitaloceanspaces.com/gallos/";
 
     fetch("https://api.keskplay.com/api/gallos/combate", {
         method: "GET", // or 'PUT'        
@@ -27,10 +31,13 @@ function VideoPlayer( { videoActivo, setVideoActivo}) {
         .catch((error) => { swal("Disculpe","Fallo en la conexion","error"); console.error(error); setLoading(false); })
         .then((response) => {
             //videos.push(UrlVideos+response.videoMP4);
-            console.log(response.video);
+            
             setVideos([
                         UrlVideos+response.video
-                    ]);            
+                    ]);    
+            setCombate(response);
+            
+            
             
         } );
   
@@ -58,9 +65,10 @@ function VideoPlayer( { videoActivo, setVideoActivo}) {
   useEffect(() => {
     if (videos.length > 0) {
       //evaluarCondicion();
+      //console.log(videos);
      
     }
-
+    
     
   }, [videos]);
 
@@ -83,20 +91,27 @@ function VideoPlayer( { videoActivo, setVideoActivo}) {
   return (
     <div style={{ textAlign: "center"}}>
       
-
+        
         <div>
-            {videos.map((video, index) => (
-            <video            
-                id="video_carrera"
-                key={index}
-                ref={(el) => (videoRefs.current[index] = el)}                        
-                preload="auto"
-                style={{ display: index === videoActivo ? "block" : "none" }} // Oculta los videos no activos
-            >
-                <source src={video} type="video/mp4" />
-                Tu navegador no soporta el elemento de video.
-            </video>
-            ))}
+            
+
+            
+
+              {combate && combate.video && (
+                <>
+                  <video id="video_carrera" ref={(el) => (videoRefs.current[0] = el)} preload="auto" autoPlay style={{ display: videoActivo === 1 ? "block" : "none" }} width="100%" height="auto">
+                    <source src={urlvideos + combate.video} type="video/mp4" />
+                    Tu navegador no soporta el elemento de video.
+                  </video>
+                  <video id="video_alterno" ref={(el) => (videoRefs.current[1] = el)} preload="auto" autoPlay style={{ display: videoActivo === 2 ? "block" : "none" }} width="100%" height="auto">
+                    <source src={urlvideos + combate.videoAlt} type="video/mp4" />
+                    Tu navegador no soporta el elemento de video.
+                  </video>
+                </>
+              )}
+
+
+            
         </div>
     </div>
   );

@@ -30,7 +30,7 @@ function login() {
         .then((res) => res.json())
         
         .then((response) => {
-            
+            //console.log(response);
             if (response.success){
                 
 
@@ -45,6 +45,7 @@ function login() {
                                 };
                         
                 localStorage.setItem('token', response.data.user.jwt);
+                localStorage.setItem('userId', response.data.user.id);
                 //localStorage.setItem('user', JSON.stringify(response.data.user));
                 //console.log(response.data.user);
                 userSignal.value    = userlocal;
@@ -58,8 +59,8 @@ function login() {
             }
             else 
             {          
-            //swal("Disculpe",response.message,"error");
-            setMessage(response.message);
+            swal("Disculpe",response.message,"error");
+            //setMessage(response.message);
             }
             
             
