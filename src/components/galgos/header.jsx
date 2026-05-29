@@ -56,7 +56,7 @@ function Header( { carrera, urlApi } ) {
             <div className="row">
                 
 
-                <div className="col-lg-10">
+                <div className="col-lg-12">
                     <div className="row">
                         <div className="col">
                             <div className="card h-100"> {/* Agregamos h-100 */}
