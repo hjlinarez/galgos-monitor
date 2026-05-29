@@ -54,13 +54,7 @@ function Header( { carrera, urlApi } ) {
         <>
         
             <div className="row">
-                <div className="col">
-                    <div className="card h-100"> {/* Agregamos h-100 */}
-                        <div className="card-body card-body2 text-center bg-black text-body-header text-warning text-bold p-0">
-                            <img src={Logo_keskplay} className="rounded" width="100"/>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <div className="col-lg-10">
                     <div className="row">
