@@ -50,7 +50,8 @@ function login() {
                 //console.log(response.data.user);
                 userSignal.value    = userlocal;
                 tokenSignal.value   = localStorage.token;
-                navigate("/monitor");
+                //navigate("/monitor");
+                navigate("/galgos");
                 
                 //setUser(local_user);
                 
@@ -91,7 +92,7 @@ function login() {
                   boxShadow: "0 0 16px rgba(0,0,0,0.7)",
                   minWidth: "320px"
                 }}>
-                  <img src={ logo_keskplay} alt="" width={70} />
+                  <h2 className="text-white">Monitor</h2>
                   <hr />
 
                   <div className="form-group" style={{ marginBottom: "1rem" }}>
