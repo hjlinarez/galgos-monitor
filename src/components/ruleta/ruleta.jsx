@@ -182,7 +182,7 @@ function Ruleta({ urlApi }) {
             
 
             <div className={styles.izquierda} id="izquierda" >
-              <Logo sorteo={sorteo} urlApi={urlApi} />
+              <h1 class="text-white">Ruleta 36 </h1>
               <Last120 sorteo={sorteo} urlApi={urlApi} />
               
             </div>

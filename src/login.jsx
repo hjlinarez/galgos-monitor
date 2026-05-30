@@ -50,8 +50,8 @@ function login() {
                 //console.log(response.data.user);
                 userSignal.value    = userlocal;
                 tokenSignal.value   = localStorage.token;
-                //navigate("/monitor");
-                navigate("/galgos");
+                navigate("/monitor");
+                //navigate("/galgos");
                 
                 //setUser(local_user);
                 

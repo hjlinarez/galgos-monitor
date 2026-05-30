@@ -29,3 +29,12 @@ body, html {
     align-items: center; /* Centra verticalmente */
     height: 100%; /* Asegura que ocupe toda la altura disponible */
 }
+
+.monitor-card-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.monitor-card-footer .btn {
+    width: auto;
+}

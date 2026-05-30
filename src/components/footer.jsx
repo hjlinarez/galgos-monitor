@@ -36,7 +36,7 @@ function Footer( ) {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav text-end">
-              <li className="nav-item d-none">
+              <li className="nav-item">
                   <a href="."  className="btn btn-sucess"><i className="fa-solid fa-home"></i></a>                            
               </li>
               <li className="nav-item">
