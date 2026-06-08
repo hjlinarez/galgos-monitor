@@ -35,6 +35,6 @@ body, html {
     justify-content: flex-end;
 }
 
-.monitor-card-footer .btn {
-    width: auto;
+.card-footer.monitor-card-footer .btn {
+    width: auto !important;
 }
