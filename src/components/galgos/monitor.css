@@ -1,84 +1,115 @@
-
-
-html, body{   
+html,
+body {
 
     background: url('img/fondo_galgos2.jpg');
-    background-size: cover; /* Ajusta la imagen para ocupar toda la pantalla */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    background-attachment: fixed; /* Fija la imagen al fondo */
+    background-size: cover;
+    /* Ajusta la imagen para ocupar toda la pantalla */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* Evita la repetición */
+    background-attachment: fixed;
+    /* Fija la imagen al fondo */
     overflow: hidden;
 
-    
-    
-    
-    
-    
-   
+
+
+
+
+
+
 }
 
 
 
 
-#videoFondo {
+#videoFondo-container {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#videoFondo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100vw;
-    height: 100vh;
-    object-fit: cover;
+    height: 56.25vw;
+    /* 16:9 Aspect Ratio */
+    min-height: 100vh;
+    min-width: 177.77vh;
+    /* 16:9 Aspect Ratio */
+    transform: translate(-50%, -50%);
+    border: none;
+    z-index: -2;
+}
+
+#videoFondo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    /* Capa oscura para legibilidad del texto */
     z-index: -1;
 }
 
-#div-principal{
+#div-principal {
     width: 1360px;
     height: 920px;
     border: 0px solid #ff0;
     margin: auto;
 
-    position: fixed;	
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-    
-    
-    
-    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+
+
 }
 
 
-.btn_exactas{
-    
+.btn_exactas {
+
     width: 1.5em;
 }
 
-.btn_reversible{
+.btn_reversible {
     width: 1em;
 }
 
-.table-galgos{
+.table-galgos {
     border-radius: 10px;
 }
-#table > #tbody{
+
+#table>#tbody {
     background-color: black;
 }
 
-.text-body-header
-{
+.text-body-header {
     font-size: 3em;
-    
+
 }
 
 
-#div_video{    
-    
-    position: fixed; /* Se mantiene fija en la ventana */
+#div_video {
+
+    position: fixed;
+    /* Se mantiene fija en la ventana */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     display: block;
-    
+
 }
 
 
@@ -89,7 +120,7 @@ html, body{
     left: 50%;
     transform: translate(-50%, -50%);
     display: block;
-    
+
     padding: 20px;
     font-size: 20px;
 }
@@ -102,107 +133,278 @@ html, body{
     display: none;
 }
 
-#video_carrera{
+#video_carrera {
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     object-fit: cover;
-    z-index: 5000; /* Envía el video al fondo */
-    
+    z-index: 5000;
+    /* Envía el video al fondo */
+
 }
 
 
-#resultados{
+#resultados {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);    
-    display: none; /* Activa flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    /* Activa flexbox */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
     z-index: 6000;
 }
 
-#resultados-contenedor
-{
+#resultados-contenedor {
     position: relative;
     width: 50em;
-    
+
 }
 
-.img-podium{
+.img-podium {
     width: 100%;
-    
+
 }
 
 
 
-.img-ganadora2
-{
-    position: absolute; /* Se coloca encima */
-    
-
-    top: 225px; /* Ajusta la posición vertical */
-    left: 80px; /* Ajusta la posición horizontal */
+.img-ganadora2 {
+    position: absolute;
+    /* Se coloca encima */
 
 
-    width: 150px; /* Tamaño de la imagen superpuesta */
+    top: 225px;
+    /* Ajusta la posición vertical */
+    left: 80px;
+    /* Ajusta la posición horizontal */
+
+
+    width: 150px;
+    /* Tamaño de la imagen superpuesta */
 }
 
 
-.img-ganadora1
-{
-    position: absolute; /* Se coloca encima */
-    top: 190px; /* Ajusta la posición vertical */
-    left: 320px; /* Ajusta la posición horizontal */
-    width: 150px; /* Tamaño de la imagen superpuesta */
-}
-
-
-
-.img-ganadora3
-{
-    position: absolute; /* Se coloca encima */
-    top: 225px; /* Ajusta la posición vertical */
-    left: 560px; /* Ajusta la posición horizontal */
-    width: 150px; /* Tamaño de la imagen superpuesta */
+.img-ganadora1 {
+    position: absolute;
+    /* Se coloca encima */
+    top: 190px;
+    /* Ajusta la posición vertical */
+    left: 320px;
+    /* Ajusta la posición horizontal */
+    width: 150px;
+    /* Tamaño de la imagen superpuesta */
 }
 
 
 
+.img-ganadora3 {
+    position: absolute;
+    /* Se coloca encima */
+    top: 225px;
+    /* Ajusta la posición vertical */
+    left: 560px;
+    /* Ajusta la posición horizontal */
+    width: 150px;
+    /* Tamaño de la imagen superpuesta */
+}
 
-#div-login{
-    
-    position: fixed; /* Se mantiene fija en la ventana */
+
+
+
+#div-login {
+
+    position: fixed;
+    /* Se mantiene fija en la ventana */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 
-    
-    background-color: rgba(0, 0, 0, 1);        
+
+    background-color: rgba(0, 0, 0, 1);
     z-index: 5000;
     border: 0px solid yellow;
-    
+
 }
 
-#div-login-contenedor
-{   
-    border: 0px solid yellow;    
-    position: fixed;	
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+#div-login-contenedor {
+    border: 0px solid yellow;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
-.activar_login{
+.activar_login {
     display: block;
 }
 
-.bloquear_login{
+.bloquear_login {
     display: none;
 }
 
+/* Contenedor Grid para evitar saltos de altura al alternar paneles */
+.panels-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.transition-panel {
+    grid-area: 1 / 1 / 2 / 2;
+    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.5s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panel-active {
+    pointer-events: auto !important;
+    z-index: 2;
+}
+
+.panel-inactive {
+    opacity: 0 !important;
+    transform: translateY(20px) scale(0.98) !important;
+    filter: blur(10px) !important;
+    pointer-events: none !important;
+    z-index: 1;
+}
+
+/* Transiciones Aleatorias */
+
+/* 1. Slide Up */
+@keyframes entrySlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.fade-slide-up {
+    animation: entrySlideUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 2. Slide Down */
+@keyframes entrySlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-25px);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.fade-slide-down {
+    animation: entrySlideDown 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 3. Slide Left */
+@keyframes entrySlideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+.fade-slide-left {
+    animation: entrySlideLeft 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 4. Slide Right */
+@keyframes entrySlideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+.fade-slide-right {
+    animation: entrySlideRight 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 5. Zoom In */
+@keyframes entryZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+.fade-zoom-in {
+    animation: entryZoomIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 6. Zoom Out */
+@keyframes entryZoomOut {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+.fade-zoom-out {
+    animation: entryZoomOut 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 7. Pure Blur Fade */
+@keyframes entryBlur {
+    0% {
+        opacity: 0;
+        filter: blur(15px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.fade-blur {
+    animation: entryBlur 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

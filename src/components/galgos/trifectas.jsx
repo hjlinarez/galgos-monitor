@@ -11,15 +11,17 @@ function Trifectas({ carrera }) {
   return (
     <>
       <div className="card">
-        <div className="card-header h4 text-bg-dark">Trifectas</div>
-        <div className="card-body bg-black p-0">
+
+        <div className="card-header fs-4 p-1 bg-warning bg-gradient text-dark fw-bold">TRIFECTAS</div>
+        <div className="card-body bg-black fs-4">
 
 
-          <div className="row g-0 mb-0">
-            <div className="col p-0 mb-0">
-              <table className="table table-dark table-sm table-striped m-0">
+          <div className="row">
+
+            <div className="col-lg-4">
+              <table className="table table-dark table-sm table-striped ">
                 <thead>
-                <tr>
+                  <tr>
                     <th>I,II,III</th>
                     <th>
                       <img src={btn_2} className="btn_exactas" alt="Logo" />
@@ -39,7 +41,7 @@ function Trifectas({ carrera }) {
                   </tr>
                 </thead>
                 <tbody>
-                  
+
                   <tr>
                     <td>
                       <img src={btn_1} className="btn_exactas" alt="Logo" />
@@ -98,13 +100,12 @@ function Trifectas({ carrera }) {
                 </tbody>
               </table>
             </div>
-            <div className="col p-0 mb-0">
-              <table
-                className="table table-dark table-sm table-striped m-0"
-                width="100%"
-              >
+
+
+            <div className="col-lg-4">
+              <table className="table table-dark table-sm table-striped ">
                 <thead>
-                <tr>
+                  <tr>
                     <th>I,II,III</th>
                     <th>
                       <img src={btn_1} className="btn_exactas" alt="Logo" />
@@ -124,7 +125,7 @@ function Trifectas({ carrera }) {
                   </tr>
                 </thead>
                 <tbody>
-                  
+
                   <tr>
                     <td>
                       <img src={btn_2} className="btn_exactas" alt="Logo" />
@@ -183,34 +184,31 @@ function Trifectas({ carrera }) {
                 </tbody>
               </table>
             </div>
-            <div className="col p-0 mb-0">
-              <table
-                className="table table-dark table-sm table-striped m-0"
-                width="100%"
-              >
+            <div className="col-lg-4">
+              <table className="table table-dark table-sm table-striped ">
                 <thead>
-                    <tr>
-                        <th>I,II,III</th>
-                        <th>
-                        <img src={btn_1} className="btn_exactas" alt="Logo" />
-                        </th>
-                        <th>
-                        <img src={btn_2} className="btn_exactas" alt="Logo" />
-                        </th>
-                        <th>
-                        <img src={btn_4} className="btn_exactas" alt="Logo" />
-                        </th>
-                        <th>
-                        <img src={btn_5} className="btn_exactas" alt="Logo" />
-                        </th>
-                        <th>
-                        <img src={btn_6} className="btn_exactas" alt="Logo" />
-                        </th>
+                  <tr>
+                    <th>I,II,III</th>
+                    <th>
+                      <img src={btn_1} className="btn_exactas" alt="Logo" />
+                    </th>
+                    <th>
+                      <img src={btn_2} className="btn_exactas" alt="Logo" />
+                    </th>
+                    <th>
+                      <img src={btn_4} className="btn_exactas" alt="Logo" />
+                    </th>
+                    <th>
+                      <img src={btn_5} className="btn_exactas" alt="Logo" />
+                    </th>
+                    <th>
+                      <img src={btn_6} className="btn_exactas" alt="Logo" />
+                    </th>
                   </tr>
 
                 </thead>
                 <tbody>
-                  
+
                   <tr>
                     <td>
                       <img src={btn_3} className="btn_exactas" alt="Logo" />
@@ -271,14 +269,11 @@ function Trifectas({ carrera }) {
             </div>
           </div>
 
-          <div className="row g-0 mb-0 mt-0">
-            <div className="col p-0 mb-0">
-              <table
-                className="table table-dark table-sm table-striped m-0"
-                width="100%"
-              >
+          <div className="row">
+            <div className="col-lg-4">
+              <table className="table table-dark table-sm table-striped ">
                 <thead>
-                    <tr>
+                  <tr>
                     <th>I,II,III</th>
                     <th>
                       <img src={btn_1} className="btn_exactas" alt="Logo" />
@@ -298,7 +293,7 @@ function Trifectas({ carrera }) {
                   </tr>
                 </thead>
                 <tbody>
-                  
+
                   <tr>
                     <td>
                       <img src={btn_4} className="btn_exactas" alt="Logo" />
@@ -358,13 +353,10 @@ function Trifectas({ carrera }) {
               </table>
             </div>
 
-            <div className="col p-0 mb-0">
-              <table
-                className="table table-dark table-sm table-striped m-0"
-                width="100%"
-              >
+            <div className="col-lg-4">
+              <table className="table table-dark table-sm table-striped ">
                 <thead>
-                    <tr>
+                  <tr>
                     <th>I,II,III</th>
                     <th>
                       <img src={btn_1} className="btn_exactas" alt="Logo" />
@@ -384,7 +376,7 @@ function Trifectas({ carrera }) {
                   </tr>
                 </thead>
                 <tbody>
-                  
+
                   <tr>
                     <td>
                       <img src={btn_5} className="btn_exactas" alt="Logo" />
@@ -438,19 +430,17 @@ function Trifectas({ carrera }) {
                     <td>{carrera.trifecta562}</td>
                     <td>{carrera.trifecta563}</td>
                     <td>{carrera.trifecta564}</td>
-                    
+
                     <td>{carrera.trifecta566}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div className="col p-0 mb-0">
-              <table
-                className="table table-dark table-sm table-striped m-0"
-                width="100%"
-              >
+
+            <div className="col-lg-4">
+              <table className="table table-dark table-sm table-striped ">
                 <thead>
-                    <tr>
+                  <tr>
                     <th>I,II,III</th>
                     <th>
                       <img src={btn_1} className="btn_exactas" alt="Logo" />
@@ -467,11 +457,11 @@ function Trifectas({ carrera }) {
                     <th>
                       <img src={btn_5} className="btn_exactas" alt="Logo" />
                     </th>
-                    
+
                   </tr>
                 </thead>
                 <tbody>
-                  
+
                   <tr>
                     <td>
                       <img src={btn_6} className="btn_exactas" alt="Logo" />
@@ -482,7 +472,7 @@ function Trifectas({ carrera }) {
                     <td>{carrera.trifecta613}</td>
                     <td>{carrera.trifecta614}</td>
                     <td>{carrera.trifecta615}</td>
-                    
+
                   </tr>
                   <tr>
                     <td>
@@ -494,7 +484,7 @@ function Trifectas({ carrera }) {
                     <td>{carrera.trifecta623}</td>
                     <td>{carrera.trifecta624}</td>
                     <td>{carrera.trifecta625}</td>
-                    
+
                   </tr>
                   <tr>
                     <td>
@@ -506,7 +496,7 @@ function Trifectas({ carrera }) {
                     <td>{carrera.trifecta633}</td>
                     <td>{carrera.trifecta634}</td>
                     <td>{carrera.trifecta635}</td>
-                    
+
                   </tr>
                   <tr>
                     <td>
@@ -518,7 +508,7 @@ function Trifectas({ carrera }) {
                     <td>{carrera.trifecta643}</td>
                     <td>{carrera.trifecta644}</td>
                     <td>{carrera.trifecta645}</td>
-                    
+
                   </tr>
                   <tr>
                     <td>
@@ -530,7 +520,7 @@ function Trifectas({ carrera }) {
                     <td>{carrera.trifecta653}</td>
                     <td>{carrera.trifecta654}</td>
                     <td>{carrera.trifecta655}</td>
-                    
+
                   </tr>
                 </tbody>
               </table>
@@ -539,10 +529,10 @@ function Trifectas({ carrera }) {
         </div>
       </div>
 
-    
 
 
-      
+
+
     </>
   );
 }
