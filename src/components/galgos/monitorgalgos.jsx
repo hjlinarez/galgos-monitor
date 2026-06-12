@@ -241,7 +241,7 @@ function MonitorGalgos({ urlApi }) {
 
 
       <div id="div-principal">
-        <div className="container ">
+        <div className="container">
           <div id="div_video"></div>
           <input type="hidden" id="text_contador" name="text_contador" />
           <Header carrera={carrera} urlApi={urlApi} />

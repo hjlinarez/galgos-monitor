@@ -6,7 +6,7 @@ import Img_ruleta from "./img/ruleta.jpg";
 import Img_gallos from "./img/gallos.jpg";
 import Img_keno from "./img/keno.png";
 import Logo_keskplay from "../../img/logo_keskplay.png";
-
+import Footer from "../footer.jsx";
 import "./monitor.css";
 
 const cerrarSession = () => {
@@ -72,9 +72,7 @@ export default function Monitor() {
     return (
         <>
             <div id="div_principal">
-                <div className="bg-glow bg-glow-1"></div>
-                <div className="bg-glow bg-glow-2"></div>
-                <div className="bg-glow bg-glow-3"></div>
+                
                 <div className="container" style={{ position: "relative", zIndex: 1 }}>
                     <div className="row justify-content-center">
                         <div className="col-12 col-xl-10">
@@ -101,6 +99,7 @@ export default function Monitor() {
                                     </div>
                                 </div>
                                 <div className="card-footer monitor-card-footer d-flex justify-content-end">
+                                    <Footer />
                                     <button className="btn btn-danger w-auto" onClick={() => cerrarSession()}>Salir</button>
                                 </div>
                             </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from './ruleta.module.css';
 
 function getSegundos(segundos) {    
     const minutos = Math.floor((segundos % 3600) / 60);
@@ -29,11 +30,11 @@ function Evento({ sorteo, setEjecutarSorteo }) {
 
   return (
             <>
-            <div className="card bg-transparent">
-                <div className="card-header fs-4 text-center bg-warning text-dark fw-bold">
+            <div className="card bg-transparent border-1" >
+                <div className={styles.bg_warning + " card-header text-center fs-4 fw-bold"}>
                     Sorteo #{sorteo.idsorteo}
                 </div>
-                <div className="card-body  fs-1 text-warning fw-bold text-center p-0">
+                <div className="card-body p-1 fs-1 fw-bold text-center text-white">
                     { getSegundos(tiempo) }
                 </div>
             </div>

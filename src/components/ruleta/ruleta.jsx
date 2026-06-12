@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../footer";
-import ruletaimg from  "./img/ruleta.png";
-import bolaimg from  "./img/bola.png";
-
-import logokeskplay from  "../../img/logo_keskplay.png";
+import FooterRuleta from "./footerRuleta.jsx";
+import HeaderRuleta from "./headerRuleta.jsx";
+import ruletaimg from "./img/ruleta.png";
+import bolaimg from "./img/bola.png";
 import Evento from "./evento.jsx";
 import Jugadas from "./jugadas.jsx";
 import Logo from "./logo.jsx";
@@ -27,12 +27,12 @@ import Audio_1 from "./audio/1.mp3";
 import Audio_2 from "./audio/2.mp3";
 import Audio_3 from "./audio/3.mp3";
 import Audio_4 from "./audio/4.mp3";
-import Audio_5 from "./audio/5.mp3";        
+import Audio_5 from "./audio/5.mp3";
 import Audio_6 from "./audio/6.mp3";
 import Audio_7 from "./audio/7.mp3";
 import Audio_8 from "./audio/8.mp3";
 import Audio_9 from "./audio/9.mp3";
-import Audio_10 from "./audio/10.mp3"; 
+import Audio_10 from "./audio/10.mp3";
 import Audio_11 from "./audio/11.mp3";
 import Audio_12 from "./audio/12.mp3";
 import Audio_13 from "./audio/13.mp3";
@@ -71,7 +71,7 @@ import Audio from "./audio/roullette.mp3";
 function Ruleta({ urlApi }) {
 
   const [sorteo, setSorteo] = useState([]);
-  const [ejecutarSorteo, setEjecutarSorteo] = useState(false);  
+  const [ejecutarSorteo, setEjecutarSorteo] = useState(false);
   const [mostrarjackpot, setMostrarjackpot] = useState(false);
 
   useEffect(() => {
@@ -87,20 +87,20 @@ function Ruleta({ urlApi }) {
 
 
   const fetchSorteo = async () => {
-            try {
-              const response = await fetch(`${urlApi}/ruleta/sorteo`);
-              if (!response.ok) {
-                throw new Error("Network response was not ok");
-              }
-              const data = await response.json();
-              //data.segundos = 5
-              console.log(data);
-              setSorteo(data);
-              
-            } catch (error) {
-              console.error("Error fetching sorteo:", error);
-            }
-          };
+    try {
+      const response = await fetch(`${urlApi}/ruleta/sorteo`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      //data.segundos = 5
+      console.log(data);
+      setSorteo(data);
+
+    } catch (error) {
+      console.error("Error fetching sorteo:", error);
+    }
+  };
 
 
 
@@ -108,26 +108,26 @@ function Ruleta({ urlApi }) {
   useEffect(() => {
     // Set the document title
 
-    if(ejecutarSorteo) {
+    if (ejecutarSorteo) {
       setEjecutarSorteo(false);
       console.log("Ejecutando el sorteo #", sorteo.idsorteo);
       resultadoSorteo(sorteo.idsorteo, fetchSorteo, setMostrarjackpot);
-      
-      
-      
+
+
+
     }
   }, [ejecutarSorteo]);
 
   useEffect(() => {
     // Fetch the latest draw data from the API
-    
+
 
     fetchSorteo();
   }
-  , []);
+    , []);
 
 
-  
+
   return (
     <>
 
@@ -135,7 +135,7 @@ function Ruleta({ urlApi }) {
       <audio id="myAudio_1"><source src={Audio_1} type="audio/mp3" /></audio>
       <audio id="myAudio_2"><source src={Audio_2} type="audio/mp3" /></audio>
       <audio id="myAudio_3"><source src={Audio_3} type="audio/mp3" /></audio>
-      <audio id="myAudio_4"><source src={Audio_4} type="audio/mp3" /></audio> 
+      <audio id="myAudio_4"><source src={Audio_4} type="audio/mp3" /></audio>
       <audio id="myAudio_5"><source src={Audio_5} type="audio/mp3" /></audio>
       <audio id="myAudio_6"><source src={Audio_6} type="audio/mp3" /></audio>
       <audio id="myAudio_7"><source src={Audio_7} type="audio/mp3" /></audio>
@@ -167,54 +167,59 @@ function Ruleta({ urlApi }) {
       <audio id="myAudio_33"><source src={Audio_33} type="audio/mp3" /></audio>
       <audio id="myAudio_34"><source src={Audio_34} type="audio/mp3" /></audio>
       <audio id="myAudio_35"><source src={Audio_35} type="audio/mp3" /></audio>
-      <audio id="myAudio_36"><source src={Audio_36} type="audio/mp3" /></audio>     
+      <audio id="myAudio_36"><source src={Audio_36} type="audio/mp3" /></audio>
       <audio id="myAudio_37"><source src={Audio_37} type="audio/mp3" /></audio>
 
       <Mostrarjackpot mostrarJackpot={mostrarjackpot} />
-    
-      <div className={styles.wrapper}>
-        <div className={styles.principal}>
 
-          
-
-          <div className={styles.rows}>
-
-            
-
-            <div className={styles.izquierda} id="izquierda" >
-              <h1 class="text-white">Ruleta 36 </h1>
-              <Last120 sorteo={sorteo} urlApi={urlApi} />
-              
-            </div>
-
-
-            <div className={styles.centro} id="centro" >              
-              <img src={ruletaimg} alt="" className={styles.imgruleta} id="img-sorteo"/>                            
-              <img src={bolaimg} alt="" className={styles.bola} id="img-bola"/>
-            </div>
-
-
-            
-
-
-            <div className={styles.derecha} id="derecha">
-              <Evento sorteo={sorteo} urlApi={urlApi} setEjecutarSorteo={setEjecutarSorteo} />
-              
-              <Jugadas sorteo={sorteo} urlApi={urlApi} />
-              <Jackpot sorteo={sorteo} />
-              <LastResult sorteo={sorteo} urlApi={urlApi} />
-              
-              
-            </div>
-          </div>
-
-          
-
-        </div>
-      </div>
+      
+                
+                    
+                
       
 
-    <Footer />
+      <div className={styles.wrapper}>
+        <div className={styles.header}>
+          <div className="card w-100">
+            <div className={`${styles.bg_warning} card-header fs-1 text-center fw-bold`}>Ruleta de la suerte</div>
+            
+          </div>
+        </div>
+
+        <div className={styles.principal}>                              
+          <div className={styles.rows}>
+            <div className={styles.izquierda} id="izquierda" >              
+              <Last120 sorteo={sorteo} urlApi={urlApi} />
+            </div>
+            <div className={styles.centro} id="centro" >
+              <img src={ruletaimg} alt="" className={styles.imgruleta} id="img-sorteo" />
+              <img src={bolaimg} alt="" className={styles.bola} id="img-bola" />
+            </div>
+            <div className={styles.derecha} id="derecha">              
+              <Jugadas sorteo={sorteo} urlApi={urlApi} />
+              <Jackpot sorteo={sorteo} />
+            </div>
+          </div>
+        </div>
+
+        {/* Fila 3: Footer */}
+        
+          <div className={styles.footer + " row" }>
+            <div className="col-lg-3 m-0 p-0">
+              <Evento sorteo={sorteo} urlApi={urlApi} setEjecutarSorteo={setEjecutarSorteo} />
+            </div>
+            
+            <div className="col-lg-9 ml-1 mr-0">
+              <LastResult sorteo={sorteo} urlApi={urlApi} />    
+            </div>
+          </div>
+              
+        
+
+
+      </div>
+
+
     </>
   );
 }

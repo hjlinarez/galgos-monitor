@@ -1,52 +1,46 @@
-body{   
-    background: rgb(212,72,62);
-    background: radial-gradient(circle, rgba(212,72,62,1) 2%, rgba(10,10,10,1) 71%);
-    
+body {
+    background: rgb(212, 72, 62);
+    background: radial-gradient(circle, rgba(212, 72, 62, 1) 2%, rgba(10, 10, 10, 1) 71%);
+
 }
 
 
-.linea
-{
-    
+.linea {
+
     border: 0px solid green;
     display: flex;
     justify-content: space-between;
 
 }
 
-table > tr > td
-{
+table>tr>td {
     border: 1px solid black;
 }
 
-.btn-default
-{
-        
+.btn-default {
+
     background-color: honeydew;
     border: 1px solid black;
 }
 
-.container-fluid
-{
+.container-fluid {
     min-width: 400px;
 }
 
 
-.bg-primary
-{
+.bg-primary {
     border-radius: 10px;
 }
 
-.cerrando_apuestas
-{
-    background-color: rgb(0,0,0, 0.7);
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	-webkit-transition: all 1s ease;
-	-o-transition: all 1s ease;
-	transition: all 1s ease;
-	z-index: 10000;
+.cerrando_apuestas {
+    background-color: rgb(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 10000;
     color: yellow;
     margin: 0 auto;
     font-size: 8em;
@@ -65,8 +59,7 @@ table > tr > td
 
 @media screen {
 
-    .WMmessage
-    {
+    .WMmessage {
         display: none;
     }
 
@@ -74,18 +67,17 @@ table > tr > td
 
 
 @media print {
-    .WMmessage
-    {
+    .WMmessage {
         width: 100%;
         height: 100%;
-        font-size: 12px;            
+        font-size: 12px;
     }
 
-  }
+}
 
 
 
-.lineaticket{
+.lineaticket {
     margin: 0px;
     padding: 0px;
 }
@@ -94,53 +86,79 @@ table > tr > td
 
 
 
-.segundos-sorteo{
+.segundos-sorteo {
     font-size: 2em;
 }
 
-.div_marcaje{
+.div_marcaje {
     overflow: hidden;
-    
+
 }
 
-.div_jugadas
-{
+.div_jugadas {
     overflow: hidden;
-    height: 30em; 
+    height: 30em;
     overflow: auto;
 }
 
-.body_tickets_anular_pagar{
+.body_tickets_anular_pagar {
     overflow: auto;
     height: 16.3em;
 }
 
-.body_info_ticket{
+.body_info_ticket {
     min-height: 25em;
 }
 
-.body_cons_ticket{
+.body_cons_ticket {
     height: 20em;
     overflow: auto;
 }
-.body-keno{
+
+.body-keno {
     margin-top: 60px;
     overflow: auto;
-    
+
     margin-bottom: 80px;
 }
 
-iframe{
+iframe {
     width: 0px;
     height: 0px;
 
 }
 
-.ticketPrint
-{
-    
+.ticketPrint {
+
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.5em;
 
+}
+
+.btn-danger {
+    background-color: red;
+    color: white;
+}
+
+.btn-dark {
+    background-color: black;
+    color: white;
+}
+
+.btn-warning {
+    background-color: yellow;
+    color: black;
+}
+
+
+
+.btn-success {
+    background-color: green;
+    color: white;
+}
+
+.bg-success {
+    background-color: green;
+    color: white;
 }

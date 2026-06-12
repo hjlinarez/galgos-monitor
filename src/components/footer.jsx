@@ -60,15 +60,7 @@ function Footer( ) {
               <li className="nav-item">
                 <a href="#" onClick= { () => window.location.reload() } className="btn btn-sucess"><i className="fa-solid fa-arrows-rotate"></i></a>                            
               </li>
-              <li className="nav-item">
-                <button
-                  type="button"
-                  className="btn btn-sucess"
-                  onClick={() => cerrarSession()}
-                >
-                  <i className="fa-solid fa-door-open"></i>
-                </button>
-              </li>
+              
             </ul>
           </div>
         </div>
