@@ -113,7 +113,15 @@
   border: 0px solid yellow
 }
 
-.bg_warning{
-    background-color: yellow;
-    color: black;
+.bg_warning {
+    background-image: linear-gradient(
+        135deg, 
+        #bf953f 0%, 
+        #fcf6ba 25%, 
+        #b38728 50%, 
+        #fbf5b7 75%, 
+        #000000 100%
+    );
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Añade un contraste extra al texto */
 }

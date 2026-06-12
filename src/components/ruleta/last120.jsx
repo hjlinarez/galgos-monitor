@@ -56,7 +56,7 @@ function Last120({ sorteo }) {
   return (
     <>
       <div className="card bg-transparent border-0" >
-        <div className={`card-header ${styles.bg_warning} text-center text-dark fw-bold`}>Ult. 120 resultados</div>
+        <div className={`card-header ${styles.bg_warning} text-center fw-bold`}>Ult. 120 resultados</div>
         <div className=" card-body  text-center p-0 m-0 bg-transparent"  >
 
 
@@ -102,12 +102,12 @@ function Last120({ sorteo }) {
 
           <div className="d-flex w-100 mt-1" >
             <div className="card flex-fill">
-              <div className={`card-header p-1 ${styles.bg_warning} text-black fw-bold text-center`}>Pares</div>
+              <div className={`card-header p-1 ${styles.bg_warning} fw-bold text-center`}>Pares</div>
               <div className="card-body fs-4 p-0 text-center">{par}</div>
             </div>
 
             <div className="card flex-fill">
-              <div className={`card-header p-1 ${styles.bg_warning} text-black fw-bold text-center`}>Impares</div>
+              <div className={`card-header p-1 ${styles.bg_warning} fw-bold text-center`}>Impares</div>
               <div className="card-body fs-4 p-0 text-center">{impar}</div>
             </div>
 
@@ -115,15 +115,15 @@ function Last120({ sorteo }) {
 
           <div className="d-flex w-100 mt-1" >
             <div className="card flex-fill">
-              <div className={`card-header p-1 ${styles.bg_warning} text-black fw-bold text-center`}>D. #1</div>
+              <div className={`card-header p-1 ${styles.bg_warning} fw-bold text-center`}>D. #1</div>
               <div className="card-body fs-4 p-0 text-center">{doc1}</div>
             </div>
             <div className="card flex-fill">
-              <div className={`card-header p-1 ${styles.bg_warning} text-black fw-bold text-center`}>D. #2</div>
+              <div className={`card-header p-1 ${styles.bg_warning} fw-bold text-center`}>D. #2</div>
               <div className="card-body fs-4 p-0 text-center">{doc2}</div>
             </div>
             <div className="card flex-fill">
-              <div className={`card-header p-1 ${styles.bg_warning} text-black fw-bold text-center`}>D. #3</div>
+              <div className={`card-header p-1 ${styles.bg_warning} fw-bold text-center`}>D. #3</div>
               <div className="card-body fs-4 p-0 text-center">{doc3}</div>
             </div>
 
