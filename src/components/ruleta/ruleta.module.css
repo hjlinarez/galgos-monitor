@@ -1,12 +1,11 @@
-
-
-
-
-.footer_principal {
-  width: 1360px;  
-  margin: 0 auto;
+body{
+  
+  background-image: url('img/fondoverde.jpg');
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-
 
 .wrapper {
   position: fixed;
@@ -20,7 +19,7 @@
 
 .header {
   width: 1360px;
-  height: 100px;
+  height: 150px;
   border: 0px solid red;
   box-sizing: border-box;
   display: flex;
@@ -45,14 +44,14 @@
 
 .izquierda,
 .derecha {
-  width: 230px;
+  width: 300px;
   height: 100%; 
   border: 0px solid red;
   box-sizing: border-box;
 }
 
 .centro {
-  width: 900px;
+  width: 760px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -71,6 +70,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 
@@ -103,25 +103,84 @@
 }
 
 .imgruleta {
-  width: 950px;
+  width: 850px;
 
 }
 
 .bola {
-  width: 680px;
+  width: 600px;
   position: absolute;
   border: 0px solid yellow
 }
 
 .bg_warning {
-    background-image: linear-gradient(
-        135deg, 
-        #bf953f 0%, 
-        #fcf6ba 25%, 
-        #b38728 50%, 
-        #fbf5b7 75%, 
-        #000000 100%
-    );
-    color: white;
+    background-color: black;
+    color: yellow;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Añade un contraste extra al texto */
+    
+}
+
+.cuadroPagos {
+  height: 100vh; /* 'vh' significa Viewport Height. 100vh es el 100% de la pantalla */
+  box-sizing: border-box; /* Evita que los paddings o bordes rompan el diseño */
+  border: 1px solid green ;
+}
+
+.bg_jackpot {
+  /* Cambiamos background-color por background o background-image */
+  background: linear-gradient(180deg, #8b0000 0%, #ff0000 50%, #b30000 100%);
+  color: white;
+  text-align: center;
+  font-size: 3em;  
+  padding: 1px;
+  font-weight: bold;
+}
+
+.card_jackpot {  
+  border: 1.5px solid #bda054; /* Color dorado base */
+  border-radius: 18px;        /* Esquinas redondeadas */
+  background-color: #000000;  /* Fondo negro para que resalte */
+  padding: 10px;
+}
+.card_header_jackpot{
+  color: yellow;  
+}
+
+.card_body_jackpot{
+  
+  border-radius: 10px;
+  background: linear-gradient(180deg, #8b0000 0%, #ff0000 50%, #b30000 100%);
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  width: 100%;
+}
+
+.borde_dorado{
+  background: none;  /* Fondo negro interno */
+  padding: 10px;
+  
+  /* 1. Grosor del borde y esquinas redondeadas */
+  border: 1px solid #cca43b;   /* Color oro base de respaldo */
+  border-radius: 18px;        
+  
+  /* 2. El truco del Oro: Capas de luces y sombras (Efecto Biselado) */
+  box-shadow: 
+    /* Luz brillante en la esquina superior izquierda (dentro del borde) */
+    inset 2px 2px 3px rgba(255, 245, 200, 0.8), 
+    /* Sombra oscura en la esquina inferior derecha (dentro del borde) */
+    inset -2px -2px 4px rgba(90, 65, 20, 0.9),
+    /* Brillo exterior general tipo oro pulido */
+    0 0 4px rgba(230, 185, 80, 0.5),
+    /* Sombra proyectada por todo el botón para darle relieve 3D */
+    0 8px 16px rgba(0, 0, 0, 0.6);
+
+  /* 3. Transición suave por si quieres añadirle efectos de brillo al pasar el mouse */
+  transition: all 0.3s ease;
+}
+
+.bg_transparent {
+  --bs-table-bg: transparent !important;
+  background-color: transparent !important;
 }

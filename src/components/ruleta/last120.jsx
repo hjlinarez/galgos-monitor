@@ -55,9 +55,9 @@ function Last120({ sorteo }) {
 
   return (
     <>
-      <div className="card bg-transparent border-0" >
-        <div className={`card-header ${styles.bg_warning} text-center fw-bold`}>Ult. 120 resultados</div>
-        <div className=" card-body  text-center p-0 m-0 bg-transparent"  >
+      <div className={`card ${styles.borde_dorado}`}>
+      <div className={`card-header text-center p-0 fs-5 fw-bold ${styles.card_header_jackpot}`}>120 Resultados</div>
+      <div className="card-body p-0 m-0">                    
 
 
           <div className="d-flex flex-wrap justify-content-center gap-1 mt-1" role="group">

@@ -15,6 +15,7 @@ import styles from './ruleta.module.css';
 import Mostrarjackpot from "../mostrarJackpot.jsx";
 
 import fondoImagen from './img/fondo.jpg';
+import fondoImagenBlack from './img/fondoBlack.jpg';
 
 
 
@@ -74,16 +75,7 @@ function Ruleta({ urlApi }) {
   const [ejecutarSorteo, setEjecutarSorteo] = useState(false);
   const [mostrarjackpot, setMostrarjackpot] = useState(false);
 
-  useEffect(() => {
-    document.body.style.backgroundImage = `url(${fondoImagen})`;
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundRepeat = 'no-repeat';
-    document.body.style.backgroundPosition = 'center';
-
-    return () => {
-      document.body.style.backgroundImage = '';
-    };
-  }, []);
+ 
 
 
   const fetchSorteo = async () => {
@@ -179,15 +171,12 @@ function Ruleta({ urlApi }) {
       
 
       <div className={styles.wrapper}>
-        <div className={styles.header}>
-          <div className="card w-100">
-            <div className={`${styles.bg_warning} card-header fs-1 text-center fw-bold`}>Ruleta de la suerte</div>
-            
-          </div>
+        <div className={styles.header + " row m-0 p-0"}>
+          <HeaderRuleta sorteo={sorteo} urlApi={urlApi} setEjecutarSorteo={setEjecutarSorteo} />                    
         </div>
 
         <div className={styles.principal}>                              
-          <div className={styles.rows}>
+          <div className={styles.rows + " row m-0 p-0"}>
             <div className={styles.izquierda} id="izquierda" >              
               <Last120 sorteo={sorteo} urlApi={urlApi} />
             </div>
@@ -196,20 +185,15 @@ function Ruleta({ urlApi }) {
               <img src={bolaimg} alt="" className={styles.bola} id="img-bola" />
             </div>
             <div className={styles.derecha} id="derecha">              
-              <Jugadas sorteo={sorteo} urlApi={urlApi} />
-              <Jackpot sorteo={sorteo} />
+              <Jugadas sorteo={sorteo} urlApi={urlApi} />              
             </div>
           </div>
         </div>
 
         {/* Fila 3: Footer */}
-        
-          <div className={styles.footer + " row" }>
-            <div className="col-lg-3 m-0 p-0">
-              <Evento sorteo={sorteo} urlApi={urlApi} setEjecutarSorteo={setEjecutarSorteo} />
-            </div>
-            
-            <div className="col-lg-9 ml-1 mr-0">
+                  
+          <div className={styles.footer + " row " }>
+            <div className="col-lg-12 ">
               <LastResult sorteo={sorteo} urlApi={urlApi} />    
             </div>
           </div>

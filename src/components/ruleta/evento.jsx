@@ -8,7 +8,10 @@ function getSegundos(segundos) {
     return `${pad(minutos)}:${pad(segundosRestantes)}`;            
 }
 
+
+    
 function Evento({ sorteo, setEjecutarSorteo }) {
+    
     const[tiempo, setTiempo] = useState(sorteo.segundos || 0);
     useEffect(() => {
                     setTiempo(sorteo.segundos || 0);
@@ -30,14 +33,16 @@ function Evento({ sorteo, setEjecutarSorteo }) {
 
   return (
             <>
-            <div className="card bg-transparent border-1" >
-                <div className={styles.bg_warning + " card-header text-center fs-4 fw-bold"}>
+            <div className={`card ${styles.borde_dorado}`}>
+            <div className={`card-header text-center p-0 fs-4 fw-bold ${styles.card_header_jackpot}`}>
                     Sorteo #{sorteo.idsorteo}
                 </div>
-                <div className="card-body p-1 fs-1 fw-bold text-center text-white">
-                    { getSegundos(tiempo) }
+                <div className="card-body p-0 m-0">                    
+                    <div className={`${styles.card_body_jackpot}`}>{ getSegundos(tiempo) }</div>
                 </div>
             </div>
+
+            
             </>
         );
 }

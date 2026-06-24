@@ -19,16 +19,35 @@ function Lastresult({ sorteo }) {
   return (
     <>
 
-      <div className="card bg-transparent border-0" >
-        <div className={`card-header ${styles.bg_warning} fs-4 fw-bold`}>Ultimos resultados</div>
-        <div className="card-body p-2 m-0">
-          <div className="btn-group btn-group-lg w-100" role="group" >
-            {sorteo.ultimos_resultados?.map((item, index) => (
-              <button key={index} type="button" className={`btn ${getColor(item.numero)} fs-4 `}><span className="badge text-white p-1">{item.numero}</span></button>
+      <div className={`card ${styles.borde_dorado}`}>
+        
+      <div className="card-header p-0 m-0"><h3 className="text-white p-0">Ultimos resultados</h3></div>
+        <div className="card-body p-0 m-0">
+                  
+        <div className="d-flex justify-content-center gap-3 w-100 p-0" role="group">
+          {sorteo.ultimos_resultados?.map((item, index) => (
+            <div
+              key={index}
+              className={`${getColor(item.numero)} d-flex align-items-center justify-content-center rounded-circle text-white fs-3 fw-bold`}
+              style={{ 
+                width: '50px', 
+                height: '50px',
+                minWidth: '50px',
+                borderTop: '3px solid rgba(255, 255, 255, 0.4)',  // Brillo arriba
+                borderLeft: '3px solid rgba(255, 255, 255, 0.4)', // Brillo a la izquierda
+                borderBottom: '4px solid rgba(0, 0, 0, 0.3)',     // Sombra abajo (más gruesa)
+                borderRight: '4px solid rgba(0, 0, 0, 0.3)',      // Sombra a la derecha
+                boxShadow: 'inset 2px 2px 3px rgba(255, 255, 255, 0.2)' // Brillo interno extra
+              }}
+            >
+              <span>{item.numero}</span>
+            </div>
             ))}
-          </div>
         </div>
-      </div>
+        </div>
+
+        </div>
+      
 
 
 
